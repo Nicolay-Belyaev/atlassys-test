@@ -14,11 +14,16 @@
 </script>
 
 <template>
-  <img class="avatar"
-       :width="width"
-       :height="height"
-       :src="imgSrc"
-       alt="no image found">
+<!--  div работает якорем для картинки с на страничке Edit Profile у которой relative позиция-->
+  <div :style="{width: width, height: height}">
+    <img class="avatar"
+         :width="width"
+         :height="height"
+         :src="imgSrc"
+         alt="no image found">
+    <slot/>
+  </div>
+
 </template>
 
 <style scoped>

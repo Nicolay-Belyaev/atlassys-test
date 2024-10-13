@@ -2,31 +2,27 @@
 
 import BaseButton from "@/shared/BaseButton.vue";
 import BaseIcon from "@/shared/BaseIcon.vue";
-import Home from "@/assets/icons/navigation/home.vue";
-import Accounts from "@/assets/icons/navigation/accounts.vue";
-import Investments from "@/assets/icons/navigation/investments.vue";
-import Cards from "@/assets/icons/navigation/cards.vue";
-import Loans from "@/assets/icons/navigation/loans.vue";
-import Services from "@/assets/icons/navigation/services.vue";
-import Privileges from "@/assets/icons/navigation/privileges.vue";
-import Transactions from "@/assets/icons/navigation/transactions.vue";
-import Settings from "@/assets/icons/navigation/settings.vue";
-import Logo from "@/assets/icons/navigation/logo.vue";
+import Home from "@/assets/icons/navigation/home-icon.vue";
+import Accounts from "@/assets/icons/navigation/accounts-icon.vue";
+import Investments from "@/assets/icons/navigation/investments-icon.vue";
+import Cards from "@/assets/icons/navigation/cards-icon.vue";
+import Loans from "@/assets/icons/navigation/loans-icon.vue";
+import Services from "@/assets/icons/navigation/services-icon.vue";
+import Privileges from "@/assets/icons/navigation/privileges-icon.vue";
+import Transactions from "@/assets/icons/navigation/transactions-icon.vue";
+import Settings from "@/assets/icons/navigation/settings-icon.vue";
 </script>
 
 <template>
-<!--  По хорошему, кнопки должны рисоваться отдельным компонентом, получающим через пропсы список названий и иконок.-->
-<!--  Такой компонент знает, в частности, какая кнопка нажата и соответственно управляет стилями.-->
-<!--  Времени нет написать, на рефакторинге переделаю =).-->
+<!--  TODO: Кнопки должны рисоваться отдельным компонентом, получающим через пропсы список названий и иконок. Такой компонент знает, в частности, какая кнопка нажата и соответственно управляет стилями.-->
   <section class="navigation">
     <div class="nav-logo">
-      <BaseIcon width="36" height="36>">
-        <logo/>
-      </BaseIcon>
+      <img width="36" height="36" src="../assets/images/logo.png" alt="no logo pic found">
       <span class="logo_text">BankDash.</span>
     </div>
     <div class="nav-buttons">
       <BaseButton form="nav-form" color="nav-color_grey">
+        <div class="nav-button-marker"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><home/></BaseIcon>
           Dashboard
@@ -34,6 +30,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
       </BaseButton>
 
       <BaseButton form="nav-form" color="nav-color_grey">
+        <div class="nav-button-marker"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><transactions/></BaseIcon>
           Transactions
@@ -41,6 +38,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
       </BaseButton>
 
       <BaseButton form="nav-form" color="nav-color_grey">
+        <div class="nav-button-marker"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><accounts/></BaseIcon>
           Accounts
@@ -48,6 +46,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
       </BaseButton>
 
       <BaseButton form="nav-form" color="nav-color_grey">
+        <div class="nav-button-marker"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><investments/></BaseIcon>
           Investments
@@ -55,6 +54,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
       </BaseButton>
 
       <BaseButton form="nav-form" color="nav-color_grey">
+        <div class="nav-button-marker"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><cards/></BaseIcon>
           Credit Cards
@@ -62,6 +62,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
       </BaseButton>
 
       <BaseButton form="nav-form" color="nav-color_grey">
+        <div class="nav-button-marker"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><loans/></BaseIcon>
           Loans
@@ -69,6 +70,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
       </BaseButton>
 
       <BaseButton form="nav-form" color="nav-color_grey">
+        <div class="nav-button-marker"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><services/></BaseIcon>
           Services
@@ -76,6 +78,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
       </BaseButton>
 
       <BaseButton form="nav-form" color="nav-color_grey">
+        <div class="nav-button-marker"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><privileges/></BaseIcon>
           My Privileges
@@ -83,6 +86,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
       </BaseButton>
 
       <BaseButton form="nav-form" color="nav-color_blue">
+        <div class="nav-button-marker make_blue"></div>
         <div class="nav-button_content">
           <BaseIcon width="25" height="25"><settings/></BaseIcon>
           Setting
@@ -94,11 +98,13 @@ import Logo from "@/assets/icons/navigation/logo.vue";
 
 <style scoped>
 .navigation {
-  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 31px;
+  border-right: 1px solid #E6EFF5;
+  height: 100vh;
+  background: #FFF;
 }
 .nav-logo {
   font-family: Mont,serif;
@@ -108,7 +114,7 @@ import Logo from "@/assets/icons/navigation/logo.vue";
   text-align: left;
   color: #343C6A;
 
-  height: 36px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,26 +122,38 @@ import Logo from "@/assets/icons/navigation/logo.vue";
 }
 
 .nav-buttons {
-  width: 270px;
+  width: 219px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 .nav-button_content {
-  width: 60%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 26px;
 }
+
+.nav-button-marker {
+  height: 60px;
+  width: 6px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.make_blue {
+  background: #1814F3;
+}
+
 .button__nav-form {
-  height: 32px;
+  height: 60px;
   font-family: Inter,serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
-  justify-content: center;
+  justify-content: left;
+  gap: 22px;
 
   display: flex;
   align-items: center;

@@ -47,8 +47,10 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  width: 100%;
   justify-content: space-between;
+  border-bottom: 1px solid #E6EFF5;
+  padding: 0 20px 0 20px;
+  background: #FFF;
 }
 .header-name {
   font-family: Inter,serif;
