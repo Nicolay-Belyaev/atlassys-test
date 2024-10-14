@@ -25,7 +25,7 @@
   <div class="header">
     <span class="header-name">{{ header }}</span>
     <div class="header-controls">
-
+      <img class="header-burger" src="@/assets/images/burger.png" alt="burger.png">
       <Search/>
       <BaseButton form="header-form" color="header-color">
         <BaseIcon height="25" width="25" icon-name="gear">
@@ -72,6 +72,18 @@
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+.header-burger {
+  display: none;
+  @media screen and (max-width: 375px){
+    display: block;
+    width: 18px;
+    height: 14px;
+    position: absolute;
+    top: 30px;
+
+  }
 }
 .header-avatar {
   @media screen and (max-width: 375px){
