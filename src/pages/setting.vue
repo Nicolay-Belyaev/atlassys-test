@@ -21,7 +21,15 @@ import EditProfile from "@/components/EditProfile.vue";
     grid-template-rows: 100px 1fr;
     grid-template-areas:
             "navigation header"
-            "navigation content"
+            "navigation content";
+    @media screen and (max-width: 375px){
+      grid-template-areas:
+            "header"
+            "content";
+      grid-template-columns: 1fr;
+      grid-template-rows: 140px 1fr;
+    }
+
   }
   .header {
     grid-area: header;

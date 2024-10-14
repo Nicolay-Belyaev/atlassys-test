@@ -105,6 +105,9 @@ import Settings from "@/assets/icons/navigation/settings-icon.vue";
   border-right: 1px solid #E6EFF5;
   height: 100vh;
   background: #FFF;
+  @media screen and (max-width: 375px){
+    display: none;
+  }
 }
 .nav-logo {
   font-family: Mont,serif;

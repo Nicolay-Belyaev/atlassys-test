@@ -30,8 +30,8 @@ defineProps({
         <div class="profile-button-marker"></div>
       </BaseButton>
     </div>
-    <Avatar width="130" height="130" :img-src="avatar">
-      <img src="@/assets/images/pen.png" alt="pen" class="profile-change-photo">
+    <Avatar class="profile-avatar" width="130" height="130" :img-src="avatar">
+      <img  src="@/assets/images/pen.png" alt="pen" class="profile-change-photo">
     </Avatar>
     <ProfileEditForm class="profile-form"/>
   </section>
@@ -39,11 +39,21 @@ defineProps({
 
 <style scoped lang="scss">
  .profile-wrapper {
-   background: #FFF;
-   height: 717px;
    @media screen and (max-width: 1330px){
      height: 1180px;
    }
+   @media screen and (max-width: 375px) {
+     grid-template-areas:
+      "controls"
+      "avatar"
+      "form";
+     grid-template-columns: 325px;
+     grid-template-rows: 85px 130px 1fr;
+     height: 1400px;
+    }
+
+   background: #FFF;
+   height: 717px;
    margin: 31px 40px 0 40px;
    padding: 37px 30px;
    border-radius: 25px;
@@ -64,6 +74,19 @@ defineProps({
    border-bottom: 1px solid #F4F5F7;
    display: flex;
    gap: 20px;
+   @media screen and (max-width: 375px) {
+     justify-self: center;
+   }
+ }
+ .profile-avatar {
+   // вот тут накосячил. надо переделать компонент Avatar, но пока поставим костыль
+   @media screen and (max-width: 375px) {
+     zoom: 1.5;
+   }
+   justify-self: center;
+   position: relative;
+   left: 10px;
+   bottom: 10px;
  }
 
  .profile-button-content {
@@ -76,6 +99,16 @@ defineProps({
 
    &_blue {
      color: #1814F3;
+     @media screen and (max-width: 375px) {
+       font-size: 13px;
+       font-weight: 500;
+       line-height: 15px;
+     }
+   }
+   @media screen and (max-width: 375px) {
+     font-size: 13px;
+     font-weight: 500;
+     line-height: 15px;
    }
  }
 
@@ -88,6 +121,9 @@ defineProps({
      border-top-left-radius: 10px;
      border-top-right-radius: 10px;
      position: relative;
+   }
+   @media screen and (max-width: 375px) {
+     width: 80px;
    }
  }
 
@@ -115,6 +151,10 @@ defineProps({
   align-items: center;
   justify-content: flex-end;
   gap: 3px;
+
+  @media screen and (max-width: 375px){
+    width: 80px;
+  }
 }
 
  .button__profile-color {

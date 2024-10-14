@@ -25,6 +25,7 @@
   <div class="header">
     <span class="header-name">{{ header }}</span>
     <div class="header-controls">
+
       <Search/>
       <BaseButton form="header-form" color="header-color">
         <BaseIcon height="25" width="25" icon-name="gear">
@@ -36,7 +37,7 @@
           <bell/>
         </BaseIcon>
       </BaseButton>
-      <Avatar width="60" height="60" :img-src="avatar"/>
+      <Avatar class="header-avatar" width="60" height="60" :img-src="avatar"/>
     </div>
   </div>
 
@@ -51,6 +52,10 @@
   border-bottom: 1px solid #E6EFF5;
   padding: 0 20px 0 20px;
   background: #FFF;
+  @media screen and (max-width: 375px){
+    flex-direction: column;
+    gap: 0;
+  }
 }
 .header-name {
   font-family: Inter,serif;
@@ -59,11 +64,22 @@
   line-height: 34px;
   text-align: left;
   color: #343C6A;
+  @media screen and (max-width: 375px){
+    margin-top: 19px;
+  }
 }
 .header-controls {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+.header-avatar {
+  @media screen and (max-width: 375px){
+    position: absolute;
+    zoom: 0.6;
+    top: 30px;
+    left: 650px;
+  }
 }
 
 .button__header-form {
@@ -75,6 +91,9 @@
   align-items: center;
   justify-content: center;
   border: none;
+  @media screen and (max-width: 375px){
+    display: none;
+  }
 }
 
 .button__header-color {

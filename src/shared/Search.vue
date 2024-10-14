@@ -6,7 +6,7 @@ import Magglass from "@/assets/icons/header/magglass.vue";
 
 <template>
   <div class="search__wrapper">
-    <BaseIcon width="20" height="20" icon-name="magglass">
+    <BaseIcon icon-color="red" width="20" height="20" icon-name="magglass">
       <magglass/>
     </BaseIcon>
     <input class="search__input" placeholder="Search for something">
@@ -23,6 +23,10 @@ import Magglass from "@/assets/icons/header/magglass.vue";
     align-items: center;
     padding-left: 20px;
     gap: 20px;
+    @media screen and (max-width: 375px){
+      width: 375px;
+      margin-bottom: 20px;
+    }
   }
   .search__input {
     border:none;

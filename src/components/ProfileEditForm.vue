@@ -95,6 +95,9 @@ import BaseButton from "@/shared/BaseButton.vue";
       @media screen and (max-width: 1330px){
         grid-template-columns: repeat(1, max(418px));
       }
+      @media screen and (max-width: 375px) {
+        margin-top: 92px;
+      }
     }
     &-input-wrapper {
       height: 80px;
@@ -102,6 +105,9 @@ import BaseButton from "@/shared/BaseButton.vue";
       display: flex;
       flex-direction: column;
       gap: 11px;
+      @media screen and (max-width: 375px){
+        width: 325px;
+      }
     }
     &-input {
       height: 50px;
@@ -114,6 +120,7 @@ import BaseButton from "@/shared/BaseButton.vue";
       font-weight: 400;
       line-height: 18.15px;
       text-align: left;
+
     }
     &-label {
       font-family: Inter,serif;
@@ -132,6 +139,9 @@ import BaseButton from "@/shared/BaseButton.vue";
       left: 380px;
       bottom: 43px;
       pointer-events: none;
+      @media screen and (max-width: 375px){
+        left: 285px;
+      }
     }
     &-submit {
       width: 190px;
@@ -151,6 +161,10 @@ import BaseButton from "@/shared/BaseButton.vue";
       margin-top: 30px;
       @media screen and (max-width: 1330px){
         left: 228px;
+      }
+      @media screen and (max-width: 375px){
+        position: static;
+        width: 325px;
       }
     }
   }
