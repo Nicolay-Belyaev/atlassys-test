@@ -11,11 +11,6 @@
       type: String,
       default: "Check Header Props",
       required: true
-    },
-    avatar: {
-      type: String,
-      default: '@/assets/images/photo.jpeg',
-      required: true
     }
   })
 
@@ -37,7 +32,7 @@
           <bell/>
         </BaseIcon>
       </BaseButton>
-      <Avatar class="header-avatar" width="60" height="60" :img-src="avatar"/>
+      <Avatar class="header-avatar" width="60" height="60"/>
     </div>
   </div>
 

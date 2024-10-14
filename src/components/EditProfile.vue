@@ -7,7 +7,7 @@ import BaseButton from "@/shared/BaseButton.vue";
 defineProps({
   avatar: {
     type: String,
-    default: '@/assets/images/photo.jpeg',
+    default: '@/assets/images/photo.png',
     required: true
   }
 })
@@ -30,7 +30,7 @@ defineProps({
         <div class="profile-button-marker"></div>
       </BaseButton>
     </div>
-    <Avatar class="profile-avatar" width="130" height="130" :img-src="avatar">
+    <Avatar class="profile-avatar" width="130" height="130">
       <img  src="@/assets/images/pen.png" alt="pen" class="profile-change-photo">
     </Avatar>
     <ProfileEditForm class="profile-form"/>

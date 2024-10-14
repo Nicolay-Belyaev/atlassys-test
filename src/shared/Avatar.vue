@@ -1,9 +1,5 @@
 <script setup>
   defineProps({
-    imgSrc: {
-      type: String,
-      required: true
-    },
     width: {
       type: [Number, String],
     },
@@ -19,7 +15,7 @@
     <img class="avatar"
          :width="width"
          :height="height"
-         :src="imgSrc"
+         src="@/assets/images/photo.png"
          alt="no image found">
     <slot/>
   </div>

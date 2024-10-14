@@ -7,9 +7,9 @@ import EditProfile from "@/components/EditProfile.vue";
 
 <template>
   <section class="setting">
-    <Headline header="Setting" class="header" avatar="src/assets/images/photo.jpeg"/>
+    <Headline header="Setting" class="header" avatar="src/assets/images/photo.png"/>
     <Navigation class="nav"/>
-    <EditProfile class="content" avatar="src/assets/images/photo.jpeg"/>
+    <EditProfile class="content" avatar="src/assets/images/photo.png"/>
   </section>
 
 </template>
